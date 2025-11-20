@@ -17,7 +17,7 @@ const register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role: role || "user"
+      role: role|| "user"
     })
     await newUser.save()
     res.status(201).json({ message: "User registered successfully" });

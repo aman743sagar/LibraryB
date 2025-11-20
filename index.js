@@ -15,7 +15,7 @@ let BookRoutes=require('./Routes/bookroutes.js')
 
 
 dotenv.config()
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Library'
+const MONGO_URI = process.env.MONGO_URI 
 let PORT=9000
 
 

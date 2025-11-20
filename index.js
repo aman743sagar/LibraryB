@@ -22,7 +22,10 @@ let PORT=9000
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://serene-salamander-812255.netlify.app"
+  ],
   credentials: true,
 }));
 

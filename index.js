@@ -24,7 +24,7 @@ const app = express();
 app.use(cors({
   origin: [
     // "http://localhost:5173",
-    "jazzy-cendol-91837d.netlify.app"
+    "https://jazzy-cendol-91837d.netlify.app"
   ],
   credentials: true,
 }));

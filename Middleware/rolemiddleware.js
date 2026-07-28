@@ -10,4 +10,4 @@ const roleMiddleware =  (req, res, next) => {
     next(); // user is admin
 };
 
-module.exports = roleMiddleware;
+module.exports = {roleMiddleware}

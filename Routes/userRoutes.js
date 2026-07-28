@@ -1,7 +1,7 @@
 const express=require('express')
 const {  login, register, logout, fetchProfile } = require("../controller/userController")
 const { isAuthenticate } = require('../Middleware/authmiddleware')
-const roleMiddleware = require('../Middleware/rolemiddleware')
+const {roleMiddleware} = require('../Middleware/rolemiddleware')
 
 const router =express.Router()
 

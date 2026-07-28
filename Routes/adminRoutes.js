@@ -2,7 +2,7 @@ const express=require('express');
 const { register } = require('../controller/userController');
 const { getallUser, getUserById, deleteUser } = require('../controller/adminController');
 const { isAuthenticate } = require('../Middleware/authmiddleware');
-const roleMiddleware = require('../Middleware/rolemiddleware');
+const {roleMiddleware }= require('../Middleware/rolemiddleware');
 
 
 const router =express.Router()

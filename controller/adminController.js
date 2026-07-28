@@ -13,7 +13,7 @@ const getallUser=async(req,res)=>{
 
 const getUserById=async (req,res)=>{
     try {
-        const Users=await User.findById(req.params.id).select("-password").populate("borrowBook.bookId", "title author isbn")
+        const Users=await User.findById(req.params.id).select("-password").populate("borrowBook.bookId", "title author isbn").populate("subscription")
         // console.log(Users);
         res.json(Users)
     } catch (error) {

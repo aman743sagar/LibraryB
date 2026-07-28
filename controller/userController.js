@@ -35,7 +35,8 @@ const login = async (req, res) => {
     if (!user) return res.status(404).json({ message: "User not found" });
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.SECRET_KEY, { expiresIn: "1d" })
+    const token = jwt.sign({ id: user._id, role: user.role  }, process.env.SECRET_KEY, { expiresIn: "1d" })
+    // console.log(token);
     res.cookie("token", token, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true }).json({ success: true, message: "Login Successfully",token, user: { id: user._id, name: user.name, email: user.email, role: user.role } })
   } catch (error) {
     res.status(500).json({ message: "User Login failed", error: error.message });
@@ -60,7 +61,7 @@ const logout= async(req,res)=>{
 const fetchProfile = async (req, res) => {
   try {
    
-    const user = await User.findById(req.userId).select("-password").populate("borrowBook.bookId", "title author isbn");
+    const user = await User.findById(req.userId).select("-password").populate("borrowBook.bookId", "title author isbn").populate("subscription");
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });

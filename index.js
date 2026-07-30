@@ -32,7 +32,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://jazzy-cendol-91837d.netlify.app",
-    "earnest-rugelach-835421.netlify.app"
+    "https://lucky-wisp-5a82c8.netlify.app"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
